@@ -535,14 +535,6 @@ void menu_motion() {
   #endif
 
   //
-  // Probe Deploy/Stow
-  //
-  #if ENABLED(PROBE_DEPLOY_STOW_MENU)
-    GCODES_ITEM(MSG_MANUAL_DEPLOY, F("M401"));
-    GCODES_ITEM(MSG_MANUAL_STOW, F("M402"));
-  #endif
-
-  //
   // Probe Repeatability Test
   //
   #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST)
