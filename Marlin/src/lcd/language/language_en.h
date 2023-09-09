@@ -89,6 +89,7 @@ namespace LanguageNarrow_en {
   LSTR MSG_AUTO_HOME_Y                    = _UxGT("Home Y");
   LSTR MSG_AUTO_HOME_Z                    = _UxGT("Home Z");
   LSTR MSG_Z_AFTER_HOME                   = _UxGT("Z After Homing");
+  LSTR MSG_PARK_HEAD                      = _UxGT("Park Head");
   LSTR MSG_FILAMENT_SET                   = _UxGT("Filament Settings");
   LSTR MSG_FILAMENT_MAN                   = _UxGT("Filament Management");
   LSTR MSG_MANUAL_LEVELING                = _UxGT("Manual Leveling");

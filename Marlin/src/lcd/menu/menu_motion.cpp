@@ -469,6 +469,15 @@ void menu_motion() {
   #endif
 
   //
+  // Park Head
+  //
+  #if ENABLED(NOZZLE_PARK_MENU)
+    if (!homing_needed_error()) {
+      GCODES_ITEM(MSG_PARK_HEAD, F("G27"));
+    }
+  #endif
+
+  //
   // M493 - Fixed-Time Motion
   //
   #if ENABLED(FT_MOTION_MENU)
