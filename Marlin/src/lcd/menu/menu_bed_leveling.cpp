@@ -222,6 +222,10 @@
 
 #endif // MESH_EDIT_MENU
 
+#if ENABLED(ASSISTED_TRAMMING_WIZARD)
+  void goto_tramming_wizard();
+#endif
+
 /**
  * Step 1: Bed Level entry-point
  *
