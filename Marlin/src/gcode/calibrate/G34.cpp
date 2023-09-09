@@ -84,7 +84,7 @@ void GcodeSuite::G34() {
 
   // Move Z to pounce position
   if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("Setting Z Pounce");
-  do_blocking_move_to_z(zpounce, homing_feedrate(Z_AXIS));
+  do_blocking_move_to_z(zpounce, MMM_TO_MMS(GANTRY_CALIBRATION_FEEDRATE_START));
 
   // Store current motor settings, then apply reduced value
 
