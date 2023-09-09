@@ -320,6 +320,9 @@ void menu_advanced_settings();
       CONFIRM_ITEM(MSG_BLTOUCH_MODE_STORE_OD, MSG_BLTOUCH_MODE_STORE_OD, MSG_BUTTON_CANCEL, bltouch.mode_conv_OD, nullptr, GET_TEXT_F(MSG_BLTOUCH_MODE_CHANGE));
       ACTION_ITEM(MSG_BLTOUCH_MODE_ECHO, bltouch_report);
     #endif
+    #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST)
+      GCODES_ITEM(MSG_M48_TEST, F("G28O\nM48 P10"));
+    #endif
     END_MENU();
   }
 

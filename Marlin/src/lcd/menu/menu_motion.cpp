@@ -537,7 +537,7 @@ void menu_motion() {
   //
   // Probe Repeatability Test
   //
-  #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST)
+  #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST) && DISABLED(BLTOUCH)
     GCODES_ITEM(MSG_M48_TEST, F("G28O\nM48 P10"));
   #endif
 
