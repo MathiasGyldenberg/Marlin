@@ -222,6 +222,10 @@
 
 #endif // MESH_EDIT_MENU
 
+#if ENABLED(ASSISTED_TRAMMING_WIZARD)
+  void goto_tramming_wizard();
+#endif
+
 /**
  * Step 1: Bed Level entry-point
  *
@@ -298,6 +302,10 @@ void menu_bed_leveling() {
 
   #if ENABLED(LCD_BED_TRAMMING)
     SUBMENU(MSG_BED_TRAMMING, _lcd_bed_tramming);
+  #endif
+
+  #if ENABLED(ASSISTED_TRAMMING_WIZARD)
+    SUBMENU(MSG_TRAMMING_WIZARD, goto_tramming_wizard);
   #endif
 
   #if ENABLED(EEPROM_SETTINGS)
