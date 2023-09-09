@@ -521,7 +521,7 @@ void menu_motion() {
   //
   // Assisted Bed Tramming
   //
-  #if ENABLED(ASSISTED_TRAMMING_WIZARD) && DISABLED(LCD_BED_LEVELING)
+  #if ENABLED(ASSISTED_TRAMMING_WIZARD)
     SUBMENU(MSG_TRAMMING_WIZARD, goto_tramming_wizard);
   #endif
 
