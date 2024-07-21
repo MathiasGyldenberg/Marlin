@@ -80,16 +80,14 @@ void menu_configuration();
   void menu_mixer();
 #endif
 
+/*
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   void menu_change_filament();
 #endif
+*/
 
 #if ENABLED(LCD_INFO_MENU)
   void menu_info();
-#endif
-
-#if ANY(LED_CONTROL_MENU, CASE_LIGHT_MENU)
-  void menu_led();
 #endif
 
 #if HAS_CUTTER
@@ -335,9 +333,11 @@ void menu_main() {
     SUBMENU(MSG_CUTTER(MENU), STICKY_SCREEN(menu_spindle_laser));
   #endif
 
+/*
   #if ENABLED(ADVANCED_PAUSE_FEATURE)
     FILAMENT_CHANGE_ITEM();
   #endif
+*/
 
   #if HAS_TEMPERATURE
     SUBMENU(MSG_TEMPERATURE, menu_temperature);
@@ -369,10 +369,6 @@ void menu_main() {
 
   #if ENABLED(LCD_INFO_MENU)
     SUBMENU(MSG_INFO_MENU, menu_info);
-  #endif
-
-  #if ANY(LED_CONTROL_MENU, CASE_LIGHT_MENU)
-    SUBMENU(MSG_LEDS, menu_led);
   #endif
 
   //

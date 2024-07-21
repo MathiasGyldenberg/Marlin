@@ -69,6 +69,10 @@
   #define HAS_DEBUG_MENU 1
 #endif
 
+#if ANY(LED_CONTROL_MENU, CASE_LIGHT_MENU)
+  void menu_led();
+#endif
+
 //#define DEBUG_OUT 1
 #include "../../core/debug_out.h"
 
@@ -330,6 +334,13 @@ void menu_advanced_settings();
       CONFIRM_ITEM(MSG_BLTOUCH_MODE_STORE_OD, MSG_BLTOUCH_MODE_STORE_OD, MSG_BUTTON_CANCEL, bltouch.mode_conv_OD, nullptr, GET_TEXT_F(MSG_BLTOUCH_MODE_CHANGE));
       ACTION_ITEM(MSG_BLTOUCH_MODE_ECHO, bltouch_report);
     #endif
+
+      //
+      // Probe Repeatability Test
+      //
+      #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST)
+        GCODES_ITEM(MSG_M48_TEST, F("G28O\nM48 P10"));
+      #endif
     END_MENU();
   }
 
@@ -652,6 +663,10 @@ void menu_configuration() {
   #if HAS_PREHEAT && DISABLED(SLIM_LCD_MENUS)
     for (uint8_t m = 0; m < PREHEAT_COUNT; ++m)
       SUBMENU_N_f(m, ui.get_preheat_label(m), MSG_PREHEAT_M_SETTINGS, _menu_configuration_preheat_settings);
+  #endif
+
+  #if ANY(LED_CONTROL_MENU, CASE_LIGHT_MENU)
+    SUBMENU(MSG_LEDS, menu_led);
   #endif
 
   #if ENABLED(SOUND_MENU_ITEM)
