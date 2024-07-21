@@ -398,11 +398,11 @@
    * heater's temperature appears even slightly higher than expected after restarting, you may have a real
    * thermal malfunction. Check the temperature graph in your host for any unusual bumps.
    */
-  //#define THERMAL_PROTECTION_VARIANCE_MONITOR
+  #define THERMAL_PROTECTION_VARIANCE_MONITOR
   #if ENABLED(THERMAL_PROTECTION_VARIANCE_MONITOR)
     // Variance detection window to override the THERMAL_PROTECTION...PERIOD settings above.
     // Keep in mind that some heaters heat up faster than others.
-    //#define THERMAL_PROTECTION_VARIANCE_MONITOR_PERIOD 30  // (s) Override all watch periods
+    #define THERMAL_PROTECTION_VARIANCE_MONITOR_PERIOD 30  // (s) Override all watch periods
   #endif
 #endif
 
@@ -1469,9 +1469,9 @@
   #define MANUAL_FEEDRATE { 120*60, 120*60, 15*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel
   #define FINE_MANUAL_MOVE 0.00625  // (mm) Smallest manual move (< 0.1mm) applying to Z on most machines
   #if IS_ULTIPANEL
-    #define MANUAL_E_MOVES_RELATIVE // Display extruder move distance rather than "position"
-    #define ULTIPANEL_FEEDMULTIPLY  // Encoder sets the feedrate multiplier on the Status Screen
-    //#define ULTIPANEL_FLOWPERCENT // Encoder sets the flow percentage on the Status Screen
+    #define MANUAL_E_MOVES_RELATIVE   // Display extruder move distance rather than "position"
+    //#define ULTIPANEL_FEEDMULTIPLY  // Encoder sets the feedrate multiplier on the Status Screen
+    //#define ULTIPANEL_FLOWPERCENT   // Encoder sets the flow percentage on the Status Screen
   #endif
 #endif
 
@@ -2720,7 +2720,7 @@
  *   'M106 P<fan> T2'     : Use the set secondary speed
  *   'M106 P<fan> T1'     : Restore the previous fan speed
  */
-//#define EXTRA_FAN_SPEED
+#define EXTRA_FAN_SPEED
 
 // @section gcode
 
@@ -2747,7 +2747,7 @@
   #endif
   #define RETRACT_LENGTH               0.8    // (mm) Default retract length (positive value)
   #define RETRACT_LENGTH_SWAP          13     // (mm) Default swap retract length (positive value)
-  #define RETRACT_FEEDRATE             35     // (mm/s) Default feedrate for retracting
+  #define RETRACT_FEEDRATE             45     // (mm/s) Default feedrate for retracting
   #define RETRACT_ZRAISE               0.25   // (mm) Default retract Z-raise
   #define RETRACT_RECOVER_LENGTH       0.1    // (mm) Default additional recover length (added to retract length on recover)
   #define RETRACT_RECOVER_LENGTH_SWAP   0     // (mm) Default additional swap recover length (added to retract length on recover from toolchange)
@@ -3903,7 +3903,7 @@
 /**
  * Auto-report position with M154 S<seconds>
  */
-//#define AUTO_REPORT_POSITION
+#define AUTO_REPORT_POSITION
 #if ENABLED(AUTO_REPORT_POSITION)
   //#define AUTO_REPORT_REAL_POSITION // Auto-report the real position
 #endif
@@ -3917,7 +3917,7 @@
   // Include capabilities in M115 output
   #define EXTENDED_CAPABILITIES_REPORT
   #if ENABLED(EXTENDED_CAPABILITIES_REPORT)
-    //#define M115_GEOMETRY_REPORT
+    #define M115_GEOMETRY_REPORT
   #endif
 #endif
 

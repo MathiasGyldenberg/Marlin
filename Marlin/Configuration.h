@@ -878,7 +878,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+#define EXTRUDE_MAXLENGTH 300
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -2411,29 +2411,17 @@
 //
 // Preheat Constants - Up to 10 are supported without changes
 //
-#define PREHEAT_1_LABEL       "Fi PCTG"
-#define PREHEAT_1_TEMP_HOTEND 260
+#define PREHEAT_1_LABEL       "PCTG"
+#define PREHEAT_1_TEMP_HOTEND 240
 #define PREHEAT_1_TEMP_BED     83
 //#define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "Sp PCTG"
-#define PREHEAT_2_TEMP_HOTEND 260
-#define PREHEAT_2_TEMP_BED     83
+#define PREHEAT_2_LABEL       "TPU"
+#define PREHEAT_2_TEMP_HOTEND 215
+#define PREHEAT_2_TEMP_BED     60
 //#define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
-
-#define PREHEAT_3_LABEL       "PCTG CF"
-#define PREHEAT_3_TEMP_HOTEND 260
-#define PREHEAT_3_TEMP_BED     83
-//#define PREHEAT_3_TEMP_CHAMBER 35
-#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
-
-#define PREHEAT_4_LABEL       "TPU"
-#define PREHEAT_4_TEMP_HOTEND 215
-#define PREHEAT_4_TEMP_BED     60
-//#define PREHEAT_4_TEMP_CHAMBER 35
-#define PREHEAT_4_FAN_SPEED     0 // Value from 0 to 255
 
 // @section motion
 
