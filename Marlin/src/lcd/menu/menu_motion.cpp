@@ -320,6 +320,23 @@ void menu_move() {
   void goto_tramming_wizard();
 #endif
 
+#if ENABLED(NOZZLE_PARK_MENU)
+void menu_park_head() {
+  START_MENU();
+  BACK_ITEM(MSG_MOTION);
+
+  if (!homing_needed_error()) {
+      GCODES_ITEM(MSG_TRAM_FL, F("G27 I1"));
+      GCODES_ITEM(MSG_TRAM_FR, F("G27 I2"));
+      GCODES_ITEM(MSG_TRAM_BL, F("G27 I3"));
+      GCODES_ITEM(MSG_TRAM_BR, F("G27 I4"));
+      GCODES_ITEM(MSG_TRAM_C, F("G27 I5"));
+    }
+
+  END_MENU();
+}
+#endif
+
 #if ENABLED(FT_MOTION_MENU)
 
   #include "../../module/ft_motion.h"
@@ -551,7 +568,7 @@ void menu_motion() {
   //
   #if ENABLED(NOZZLE_PARK_MENU)
     if (!homing_needed_error()) {
-      GCODES_ITEM(MSG_PARK_HEAD, F("G27"));
+      SUBMENU(MSG_PARK_HEAD, menu_park_head);
     }
   #endif
 

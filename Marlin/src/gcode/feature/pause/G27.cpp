@@ -41,7 +41,21 @@
 void GcodeSuite::G27() {
   // Don't allow nozzle parking without homing first
   if (homing_needed_error()) return;
-  nozzle.park(parser.ushortval('P'));
+  
+  const uint16_t i_location = parser.intval('I');
+
+  switch(i_location) {
+    case 1: nozzle.park(parser.ushortval('P'), NOZZLE_PARK_POINT_FL); break;
+    case 2: nozzle.park(parser.ushortval('P'), NOZZLE_PARK_POINT_FR); break;
+    case 3: nozzle.park(parser.ushortval('P'), NOZZLE_PARK_POINT_BL); break;
+    case 4: nozzle.park(parser.ushortval('P'), NOZZLE_PARK_POINT_BR); break;
+    case 5: nozzle.park(parser.ushortval('P'), NOZZLE_PARK_POINT_CC); break;
+    default: nozzle.park(parser.ushortval('P'), NOZZLE_PARK_POINT); break;
+  }
+
+  if (i_location > 4) {
+
+  }
 }
 
 #endif // NOZZLE_PARK_FEATURE
